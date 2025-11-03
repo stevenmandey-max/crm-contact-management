@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://crm.hciprayerteam.org",
+  "homepage": "https://hopelinecare.hopechannel.id",
   "scripts": {
     "dev": "vite",
     "build": "npx vite build",
