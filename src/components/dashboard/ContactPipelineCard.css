@@ -1,0 +1,344 @@
+/* Contact Pipeline Card Styles */
+.contact-pipeline-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #007bff;
+  position: relative;
+}
+
+.contact-pipeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.contact-pipeline-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-pipeline-card .card-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contact-pipeline-card .card-icon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+/* Card Content */
+.contact-pipeline-card .card-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-pipeline-card .metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s ease;
+}
+
+.contact-pipeline-card .metric-item:last-child {
+  border-bottom: none;
+}
+
+.contact-pipeline-card .metric-item.clickable {
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0 -0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.contact-pipeline-card .metric-item.clickable:hover {
+  background-color: #f8f9fa;
+}
+
+.contact-pipeline-card .metric-item.clickable:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  background-color: #f8f9fa;
+}
+
+/* Urgent Contacts Styling */
+.contact-pipeline-card .metric-item.urgent {
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 6px;
+  margin: 0 -0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.contact-pipeline-card .metric-item.urgent.has-urgent {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  animation: pulse-urgent 2s infinite;
+}
+
+@keyframes pulse-urgent {
+  0%, 100% {
+    background-color: #fef2f2;
+  }
+  50% {
+    background-color: #fee2e2;
+  }
+}
+
+.contact-pipeline-card .urgent-icon {
+  margin-right: 0.5rem;
+}
+
+.contact-pipeline-card .urgent-badge {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Metric Labels and Values */
+.contact-pipeline-card .metric-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.contact-pipeline-card .metric-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contact-pipeline-card .metric-value .value {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.contact-pipeline-card .metric-subtitle {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+/* Growth Indicators */
+.contact-pipeline-card .growth {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.contact-pipeline-card .growth.positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.contact-pipeline-card .growth.negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Conversion Rate Bar */
+.conversion-bar {
+  width: 60px;
+  height: 4px;
+  background-color: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.conversion-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745 0%, #20c997 50%, #007bff 100%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Card Footer */
+.contact-pipeline-card .card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.contact-pipeline-card .total-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-pipeline-card .total-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.contact-pipeline-card .total-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* Loading State */
+.contact-pipeline-card.loading {
+  pointer-events: none;
+}
+
+.contact-pipeline-card .skeleton-text {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.contact-pipeline-card .skeleton-text.title {
+  height: 1.25rem;
+  width: 60%;
+}
+
+.contact-pipeline-card .skeleton-text.label {
+  height: 0.875rem;
+  width: 70%;
+}
+
+.contact-pipeline-card .skeleton-text.value {
+  height: 1.25rem;
+  width: 40%;
+}
+
+.contact-pipeline-card .skeleton-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-pipeline-card {
+    padding: 1rem;
+  }
+
+  .contact-pipeline-card .card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-pipeline-card .metric-value {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-pipeline-card .metric-value .value {
+    font-size: 1.1rem;
+  }
+
+  .contact-pipeline-card .metric-subtitle {
+    display: none;
+  }
+
+  .conversion-bar {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-pipeline-card .metric-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .contact-pipeline-card .metric-value {
+    align-self: flex-end;
+  }
+
+  .contact-pipeline-card .total-contacts {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .contact-pipeline-card {
+    border: 2px solid #000;
+  }
+
+  .contact-pipeline-card .metric-item.clickable:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .contact-pipeline-card .growth.positive {
+    background-color: #000;
+    color: #0f0;
+  }
+
+  .contact-pipeline-card .growth.negative {
+    background-color: #000;
+    color: #f00;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .contact-pipeline-card {
+    transition: none;
+  }
+
+  .contact-pipeline-card:hover {
+    transform: none;
+  }
+
+  .contact-pipeline-card .metric-item {
+    transition: none;
+  }
+
+  .contact-pipeline-card .conversion-fill {
+    transition: none;
+  }
+
+  .contact-pipeline-card .skeleton-text,
+  .contact-pipeline-card .skeleton-icon {
+    animation: none;
+  }
+
+  .contact-pipeline-card .metric-item.urgent.has-urgent {
+    animation: none;
+  }
+}

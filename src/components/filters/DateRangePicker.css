@@ -1,0 +1,250 @@
+.date-range-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 140px;
+}
+
+.date-input-group label {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.date-input {
+  padding: 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.date-input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.date-separator {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  flex-shrink: 0;
+}
+
+.clear-dates-btn {
+  padding: 0.5rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  flex-shrink: 0;
+}
+
+.clear-dates-btn:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+.date-error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #fee;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #fcc;
+}
+
+.date-presets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e1e5e9;
+}
+
+.presets-label {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.preset-btn {
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-btn:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+  transform: translateY(-1px);
+}
+
+.date-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(102, 126, 234, 0.05);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+}
+
+.summary-label {
+  color: #667eea;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.summary-value {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .date-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .date-input-group {
+    min-width: auto;
+  }
+  
+  .date-separator {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .clear-dates-btn {
+    margin-top: 0;
+    align-self: center;
+    width: fit-content;
+  }
+  
+  .preset-buttons {
+    justify-content: center;
+  }
+  
+  .date-summary {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-presets {
+    padding: 0.75rem;
+  }
+  
+  .preset-buttons {
+    flex-direction: column;
+  }
+  
+  .preset-btn {
+    text-align: center;
+  }
+}
+
+/* Animation for date picker appearance */
+.date-range-picker {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles for accessibility */
+.date-input:focus,
+.clear-dates-btn:focus,
+.preset-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Custom date input styling */
+.date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.5);
+  transition: filter 0.2s ease;
+}
+
+.date-input:hover::-webkit-calendar-picker-indicator {
+  filter: invert(0.3);
+}
+
+.date-input:focus::-webkit-calendar-picker-indicator {
+  filter: invert(0.2);
+}
+
+/* Loading state */
+.date-range-picker.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Error state animation */
+.date-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}

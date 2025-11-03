@@ -1,0 +1,249 @@
+.export-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.export-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.export-button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.export-button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+/* Variants */
+.export-button.primary {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+}
+
+.export-button.primary:not(:disabled):hover {
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+}
+
+.export-button.secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 2px solid #e1e5e9;
+}
+
+.export-button.secondary:not(:disabled):hover {
+  background: #e9ecef;
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+.export-button.icon {
+  background: #27ae60;
+  color: white;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.export-button.icon:not(:disabled):hover {
+  background: #229954;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+/* Sizes */
+.export-button.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.export-button.small.icon {
+  padding: 0.5rem;
+  width: 36px;
+  height: 36px;
+}
+
+.export-button.medium {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.export-button.medium.icon {
+  padding: 0.75rem;
+  width: 44px;
+  height: 44px;
+}
+
+.export-button.large {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.export-button.large.icon {
+  padding: 1rem;
+  width: 52px;
+  height: 52px;
+}
+
+.export-icon {
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.export-text {
+  white-space: nowrap;
+}
+
+.contact-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+}
+
+.last-export-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #155724;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.export-success-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.export-info-text {
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Loading state */
+.export-button.loading {
+  pointer-events: none;
+}
+
+.export-button.loading .export-icon {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Focus styles for accessibility */
+.export-button:focus {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .export-button.large {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .export-button.medium {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .last-export-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .export-button:not(.icon) {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .export-text {
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .last-export-info {
+    font-size: 0.75rem;
+  }
+  
+  .export-info-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Hover effects for different states */
+.export-button:not(:disabled):hover .contact-count {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.export-button.secondary:not(:disabled):hover .export-icon {
+  transform: scale(1.1);
+}
+
+.export-button.icon:not(:disabled):hover .export-icon {
+  transform: scale(1.2);
+}
+
+/* Animation for contact count updates */
+.contact-count {
+  transition: all 0.2s ease;
+}
+
+/* Disabled state styling */
+.export-button:disabled .contact-count {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.export-button:disabled .export-icon {
+  opacity: 0.7;
+}
+
+/* Success state after export */
+.export-button.success {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

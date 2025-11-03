@@ -1,0 +1,23 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White rounded rectangle background -->
+  <rect x="2" y="6" width="36" height="28" rx="8" ry="8" fill="white"/>
+  
+  <!-- Black figure with raised arms -->
+  <g transform="translate(20, 20)">
+    <!-- Head -->
+    <circle cx="0" cy="-6" r="3" fill="black"/>
+    
+    <!-- Body (V-shape torso) -->
+    <path d="M-4 -2 L0 2 L4 -2 L2 6 L-2 6 Z" fill="black"/>
+    
+    <!-- Left arm raised -->
+    <path d="M-4 -2 L-8 -8 L-6 -10 L-2 -4" fill="black"/>
+    
+    <!-- Right arm raised -->
+    <path d="M4 -2 L8 -8 L6 -10 L2 -4" fill="black"/>
+    
+    <!-- Legs -->
+    <path d="M-2 6 L-3 12 L-1 12 L0 6" fill="black"/>
+    <path d="M2 6 L3 12 L1 12 L0 6" fill="black"/>
+  </g>
+</svg>

@@ -1,0 +1,228 @@
+.text-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.text-filter.focused .filter-input {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.text-filter.has-value .filter-input {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.02);
+}
+
+.input-actions {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+.search-icon {
+  color: #999;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.text-filter.focused .search-icon,
+.text-filter.has-value .search-icon {
+  color: #667eea;
+}
+
+.filter-hint {
+  color: #f39c12;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  background: #fef9e7;
+  border: 1px solid #f7dc6f;
+  border-radius: 6px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.filter-status {
+  color: #667eea;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  background: rgba(102, 126, 234, 0.05);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 6px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .filter-input {
+    padding: 0.625rem 2.5rem 0.625rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .input-actions {
+    right: 0.5rem;
+  }
+  
+  .clear-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+  
+  .search-icon {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-input {
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .filter-hint,
+  .filter-status {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Animation for text filter appearance */
+.text-filter {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles for accessibility */
+.filter-input:focus,
+.clear-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.text-filter.loading .filter-input {
+  background: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.text-filter.loading .input-actions {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Error state */
+.text-filter.error .filter-input {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Success state */
+.text-filter.success .filter-input {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+/* Hover effects */
+.filter-input:hover:not(:focus) {
+  border-color: #b8c5ea;
+}
+
+/* Custom styling for different field types */
+.text-filter[data-field="nama"] .filter-input {
+  border-left: 4px solid #3498db;
+}
+
+.text-filter[data-field="alamat"] .filter-input {
+  border-left: 4px solid #e74c3c;
+}
+
+.text-filter[data-field="agama"] .filter-input {
+  border-left: 4px solid #f39c12;
+}
+
+.text-filter[data-field="alasanMenghubungi"] .filter-input {
+  border-left: 4px solid #9b59b6;
+}
+
+/* Typing indicator */
+.text-filter.typing .search-icon {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

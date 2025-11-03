@@ -1,0 +1,279 @@
+.service-history {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+/* Header */
+.service-history-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service-history-header h3 {
+  margin: 0 0 8px 0;
+  color: #374151;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.service-history-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* No History State */
+.no-service-history {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.no-history-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-service-history p {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.no-service-history span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Service Statistics */
+.service-stats-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sessions */
+.sessions-header {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.sessions-header h4 {
+  margin: 0;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Session Item */
+.session-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.session-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.session-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.session-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.duration {
+  font-size: 16px;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 2px;
+}
+
+.datetime {
+  font-size: 11px;
+  color: #6b7280;
+  font-family: monospace;
+}
+
+.session-details {
+  flex: 1;
+}
+
+.session-info {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.session-date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.session-hour {
+  font-size: 12px;
+  color: #6b7280;
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.session-notes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.notes-icon {
+  font-size: 12px;
+}
+
+.notes-text {
+  font-size: 13px;
+  color: #4b5563;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Session Status */
+.session-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #e5e7eb;
+}
+
+.status-badge.completed {
+  border-color: #10b981;
+}
+
+.status-badge.paused {
+  border-color: #f59e0b;
+}
+
+/* Footer */
+.sessions-footer {
+  margin-top: 16px;
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.view-all-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background: #4f46e5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-history {
+    padding: 16px;
+    margin: 12px 0;
+  }
+  
+  .service-stats-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .session-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .session-main {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .session-time {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    min-width: auto;
+  }
+  
+  .session-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

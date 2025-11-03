@@ -1,0 +1,122 @@
+/* Logo Component Styles */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logo__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Variant Styles */
+.logo--header {
+  margin-right: 0.75rem;
+}
+
+.logo--header .logo__image {
+  max-height: 48px;
+  max-width: 48px;
+}
+
+.logo--login {
+  margin-bottom: 1.5rem;
+}
+
+.logo--login .logo__image {
+  max-height: 64px;
+  max-width: 200px;
+}
+
+/* Size Styles */
+.logo--small .logo__image {
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.logo--medium .logo__image {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.logo--large .logo__image {
+  max-height: 64px;
+  max-width: 200px;
+}
+
+.logo--auto .logo__image {
+  height: auto;
+  width: auto;
+}
+
+/* Interactive States */
+.logo:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.logo:active {
+  transform: scale(0.95);
+}
+
+/* Loading State */
+.logo--loading {
+  opacity: 0.7;
+}
+
+.logo__placeholder {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Accessibility */
+.logo:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo--header .logo__image {
+    max-height: 40px;
+    max-width: 40px;
+  }
+  
+  .logo--login .logo__image {
+    max-height: 48px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo--header .logo__image {
+    max-height: 32px;
+    max-width: 32px;
+  }
+  
+  .logo--login .logo__image {
+    max-height: 40px;
+    max-width: 120px;
+  }
+}

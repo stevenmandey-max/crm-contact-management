@@ -1,0 +1,375 @@
+/* Service Performance Card Styles */
+.service-performance-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #28a745;
+  position: relative;
+}
+
+.service-performance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.service-performance-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-performance-card .card-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.service-performance-card .card-icon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+/* Card Content */
+.service-performance-card .card-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.service-performance-card .metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s ease;
+}
+
+.service-performance-card .metric-item:last-child {
+  border-bottom: none;
+}
+
+.service-performance-card .metric-item.clickable {
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0 -0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.service-performance-card .metric-item.clickable:hover {
+  background-color: #f8f9fa;
+}
+
+.service-performance-card .metric-item.clickable:focus {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+  background-color: #f8f9fa;
+}
+
+/* Coverage Metric Styling */
+.service-performance-card .metric-item.coverage {
+  background-color: #f8fff9;
+  border: 1px solid #d4edda;
+  border-radius: 6px;
+  margin: 0 -0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.service-performance-card .coverage-icon {
+  margin-right: 0.5rem;
+}
+
+/* Metric Labels and Values */
+.service-performance-card .metric-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.service-performance-card .metric-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.service-performance-card .metric-value .value {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.service-performance-card .metric-subtitle {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+/* Growth Indicators */
+.service-performance-card .growth {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.service-performance-card .growth.positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.service-performance-card .growth.negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Coverage Bar */
+.coverage-bar {
+  width: 60px;
+  height: 6px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.coverage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #dc3545 0%, #ffc107 30%, #28a745 70%, #007bff 100%);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Card Footer */
+.service-performance-card .card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.service-performance-card .session-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.service-performance-card .session-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.service-performance-card .session-label {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.service-performance-card .session-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* Loading State */
+.service-performance-card.loading {
+  pointer-events: none;
+}
+
+.service-performance-card .skeleton-text {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.service-performance-card .skeleton-text.title {
+  height: 1.25rem;
+  width: 60%;
+}
+
+.service-performance-card .skeleton-text.label {
+  height: 0.875rem;
+  width: 70%;
+}
+
+.service-performance-card .skeleton-text.value {
+  height: 1.25rem;
+  width: 40%;
+}
+
+.service-performance-card .skeleton-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Performance Indicators */
+.service-performance-card .metric-value .value {
+  position: relative;
+}
+
+/* Add performance indicator colors based on values */
+.service-performance-card .metric-item:first-of-type .value {
+  color: #28a745; /* Green for service hours */
+}
+
+.service-performance-card .metric-item:nth-of-type(2) .value {
+  color: #007bff; /* Blue for active days */
+}
+
+.service-performance-card .metric-item:nth-of-type(3) .value {
+  color: #fd7e14; /* Orange for avg time */
+}
+
+.service-performance-card .metric-item.coverage .value {
+  color: #6f42c1; /* Purple for coverage */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-performance-card {
+    padding: 1rem;
+  }
+
+  .service-performance-card .card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-performance-card .metric-value {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .service-performance-card .metric-value .value {
+    font-size: 1.1rem;
+  }
+
+  .service-performance-card .metric-subtitle {
+    display: none;
+  }
+
+  .coverage-bar {
+    width: 40px;
+  }
+
+  .service-performance-card .session-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-performance-card .session-stat {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-performance-card .metric-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .service-performance-card .metric-value {
+    align-self: flex-end;
+  }
+
+  .service-performance-card .session-stat {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .service-performance-card {
+    border: 2px solid #000;
+  }
+
+  .service-performance-card .metric-item.clickable:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .service-performance-card .growth.positive {
+    background-color: #000;
+    color: #0f0;
+  }
+
+  .service-performance-card .growth.negative {
+    background-color: #000;
+    color: #f00;
+  }
+
+  .service-performance-card .coverage-fill {
+    background: #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-performance-card {
+    transition: none;
+  }
+
+  .service-performance-card:hover {
+    transform: none;
+  }
+
+  .service-performance-card .metric-item {
+    transition: none;
+  }
+
+  .service-performance-card .coverage-fill {
+    transition: none;
+  }
+
+  .service-performance-card .skeleton-text,
+  .service-performance-card .skeleton-icon {
+    animation: none;
+  }
+}
+
+/* Focus Styles for Better Accessibility */
+.service-performance-card .metric-item.clickable:focus-visible {
+  outline: 3px solid #28a745;
+  outline-offset: 2px;
+}
+
+/* Hover Effects for Interactive Elements */
+.service-performance-card .metric-item.clickable:hover .value {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-performance-card .metric-item.clickable:hover .value {
+    transform: none;
+  }
+}
