@@ -48,24 +48,7 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     }
   };
 
-  const handleDemoLogin = async (demoUsername: string, demoPassword: string) => {
-    setUsername(demoUsername);
-    setPassword(demoPassword);
-    
-    setIsSubmitting(true);
-    
-    try {
-      const success = await login(demoUsername, demoPassword);
-      
-      if (success) {
-        onLoginSuccess?.();
-      }
-    } catch (error) {
-      console.error('Demo login error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+
 
   if (isLoading) {
     return (
