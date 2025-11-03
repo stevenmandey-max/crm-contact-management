@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://[YOUR-USERNAME].github.io/crm-contact-management",
+  "homepage": "https://stevenmandey-maxini.github.io/crm-contact-management",
   "scripts": {
     "dev": "vite",
     "build": "npx vite build",
